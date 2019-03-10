@@ -7,14 +7,24 @@ background-color: #000000;
 border:2px solid #000;
 outline: 1px dashed #fff;
 outline-offset: -10px;
+line-height: 10vw;
+text-align: center;
+color: white;
 }
 .box:hover 
 {
-background-color: #FFFFFF;
+background-color: #138496;
 }
 .boxclicked
 {
-background-color: #FFFFFF;	
+background-color: #138496;	
+}
+
+.gameOverBox
+{
+	text-align:center;
+	animation: fadein 3s;
+	font-size: 200%;
 }
 
 .gamefield
@@ -35,4 +45,9 @@ height:80vw;
 width:16vw;
 height:16vw;	
 }
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }

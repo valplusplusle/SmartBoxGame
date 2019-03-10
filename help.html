@@ -9,9 +9,6 @@
 		
 		<!-- jquery -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-		
-		<!-- link to Game JS -->
-		<script src="game.js"></script>
 
 	</head>
 	<body>
@@ -25,18 +22,17 @@
 			  </ol>
 			</nav>
 			
-			Boxes to Click: <button type="button" class="btn btn-info" id="counter"></button>
-			
-			Score: <button type="button" class="btn btn-success" id="score">0</button>
-			
-			<hr>
-			
-			<div id="game" class="gamefield">
+			<div class="alert alert-success" role="alert">
+			  <h4 class="alert-heading">Info!</h4>
+			  <p>The Game is very simple. You have to press a random number of boxes wich is shown in the top left corner.</p>
+			  <p>Boxes wich are side by side give you points!</p>
+			  <p>Boxes wich are diagonal steal you points!</p>
+			  <hr>
+			  <p class="mb-0">If you have a bad score just think again.</p>
+			  <img class="img-fluid img-thumbnail"  src="help.png">
 			</div>
-			<div id="gameOver"></div>
-
+			
 		</div>
-	
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
