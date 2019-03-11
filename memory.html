@@ -9,6 +9,9 @@
 		
 		<!-- jquery -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		
+		<!-- link to Game JS -->
+		<script src="MemoryGame.js"></script>
 
 	</head>
 	<body>
@@ -23,17 +26,16 @@
 			    <li class="breadcrumb-item"><a href="help.html">Help</a></li>
 			  </ol>
 			</nav>
+			Score: <button type="button" class="btn btn-success" id="score">0</button>
+			Time-to-Memory: <button type="button" class="btn btn-success" id="time">0</button>
+			<hr>
 			
-			<div class="alert alert-success" role="alert">
-			  <h4 class="alert-heading">Welcome to the Brain-Train-Center</h4>
-			  <p>At the moment we have got two games to train your brain!</p>
-			  <p>For testing your math skills just play the calculate-game.</p>
-			  <p>To train your eye and memory skills play the memory-game</p>
-			  <hr>
-			  <p class="mb-0">Have fun!</p>
+			<div id="game" class="gamefield">
 			</div>
-			
+			<div id="gameOver"></div>
+
 		</div>
+	
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>

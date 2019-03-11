@@ -101,6 +101,6 @@ function showScore()
 function gameOver()
 {
 	document.getElementById("game").remove();
-	document.getElementById('gameOver').innerHTML = ("<h4 class='alert-heading'>Well done!</h4> <p>Aww yeah, you successfully made it!</p> <hr> <p class='mb-0'>SCORE:</p>" + finalScore + "<hr> <a href='index.html'><p class='mb-0'>play again? ⟲</p></a>");
+	document.getElementById('gameOver').innerHTML = ("<h4 class='alert-heading'>Well done!</h4> <p>Aww yeah, you successfully made it!</p> <hr> <p class='mb-0'>SCORE:</p>" + finalScore + "<hr> <a href='calculate.html'><p class='mb-0'>play again? ⟲</p></a>");
 	document.getElementById('gameOver').setAttribute("class", "gameOverBox alert alert-success");
 }

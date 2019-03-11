@@ -19,6 +19,19 @@ background-color: #138496;
 {
 background-color: #138496;	
 }
+.boxclickedwrong
+{
+background-color: #c82333;	
+}
+
+.status0
+{
+background-color: #000000;	
+}
+.status1
+{
+background-color: #218838;	
+}
 
 .gameOverBox
 {
