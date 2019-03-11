@@ -31,7 +31,7 @@ $(document).ready(function()
 
 function timer()
 {
-	var timeLeft = 10;
+	var timeLeft = 5;
     var elem = document.getElementById('time');
     var timerId = setInterval(countdown, 1000);
     function countdown() {
@@ -40,7 +40,7 @@ function timer()
         waitForTimer = 1;
         deleteClass();
       } else {
-        elem.innerHTML = timeLeft + ' seconds remaining';
+        elem.innerHTML = timeLeft;
         timeLeft--;
       }
     }
@@ -52,19 +52,20 @@ function changeboxstatus(boxidclicked)
 {
 	if(waitForTimer === 1)
 	{
-		if(boxAttribute[boxidclicked] === 0)
+		if(boxAttribute[boxidclicked] === 1 && boxstatus[boxidclicked] === 0)
 		{
-			score = score -1;
-			showScore();
-			document.getElementById(boxidclicked.toString()).setAttribute("class", "box boxclickedwrong");
-		}
-		else
-		{
+			boxstatus[boxidclicked] = 1;
 			score = score +1;
 			showScore();
 			boxesClicked = boxesClicked +1;
 			document.getElementById(boxidclicked.toString()).setAttribute("class", "box boxclicked");
 			if (boxesClicked == boxCounter) {gameOver()}
+		}
+		if (boxAttribute[boxidclicked] === 0)
+		{
+			score = score -5;
+			showScore();
+			document.getElementById(boxidclicked.toString()).setAttribute("class", "box boxclickedwrong");
 		}
 	}
 }
