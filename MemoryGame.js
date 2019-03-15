@@ -6,9 +6,11 @@ var score = 0; //just the score
 var waitForTimer = 0;
 
 //function to initialize the game page
-$(document).ready(function()
-{
+$(document).ready(function(){generateGame();});
 
+function generateGame()
+{
+	showScore();
 	boxid = 0
   	for(y = 0; y < 25; y++) 
   	{
@@ -25,10 +27,9 @@ $(document).ready(function()
 		document.getElementById("game").appendChild(box);
 		boxstatus[boxid] = 0;
 		boxid = boxid + 1;
-	}
+  	}
 	timer();
-});
-
+}
 
 function timer()
 {
@@ -37,6 +38,7 @@ function timer()
     var timerId = setInterval(countdown, 1000);
     function countdown() {
       if (timeLeft === 0) {
+      	elem.innerHTML = timeLeft;
         clearTimeout(timerId);
         waitForTimer = 1;
         deleteClass();
@@ -56,22 +58,25 @@ function changeboxstatus(boxidclicked)
 		if(boxAttribute[boxidclicked] === 1 && boxstatus[boxidclicked] === 0)
 		{
 			boxstatus[boxidclicked] = 1;
-			score = score +1;
-			showScore();
 			boxesClicked = boxesClicked +1;
 			document.getElementById(boxidclicked.toString()).setAttribute("class", "box boxclicked");
-			if (boxesClicked == boxCounter) {gameOver()}
+			if (boxesClicked == boxCounter) {score=score+1; gameOver()}
 		}
 		if (boxAttribute[boxidclicked] === 0)
 		{
-			score = score -5;
-			showScore();
 			document.getElementById(boxidclicked.toString()).setAttribute("class", "box boxclickedwrong");
+			score = 0;
+			reloadGame();
 		}
 	}
 }
 
-//show the current score on Page
+function reloadGame()
+{
+	document.getElementById("game").innerHTML = "";
+	generateGame();	
+}
+
 function deleteClass()
 {
 	for (boxes = 0; boxes <25; boxes++)
@@ -89,7 +94,7 @@ function showScore()
 //Info when the game is done
 function gameOver()
 {
-	document.getElementById("game").remove();
-	document.getElementById('gameOver').innerHTML = ("<h4 class='alert-heading'>Well done!</h4> <p>Aww yeah, you successfully made it!</p> <hr> <p class='mb-0'>SCORE:</p>" + score + "<hr> <a href='memory.html'><p class='mb-0'>play again? ⟲</p></a>");
-	document.getElementById('gameOver').setAttribute("class", "gameOverBox alert alert-success");
+	document.getElementById("game").innerHTML = "";
+	document.getElementById('game').innerHTML = ("<h4 class='alert-heading'>Well done!</h4> <p>Aww yeah, you successfully made it!</p> <hr> <p class='mb-0'>SCORE:</p>" + score + "<hr> <button type='button' class='btn btn-success' onclick='reloadGame()'><p class='mb-0'>play again? ⟲</p></button>");
+	//document.getElementById('game').setAttribute("class", "gameOverBox alert alert-success");
 }
