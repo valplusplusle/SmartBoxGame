@@ -12,6 +12,7 @@ function generateGame()
 {
 	showScore();
 	boxid = 0
+	waitForTimer = 0;
   	for(y = 0; y < 25; y++) 
   	{
   		boxAttribute[boxid] = Math.floor(Math.random() * 2);
