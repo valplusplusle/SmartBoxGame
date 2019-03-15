@@ -11,8 +11,10 @@ $(document).ready(function(){generateGame();});
 function generateGame()
 {
 	showScore();
-	boxid = 0
+	boxid = 0;
 	waitForTimer = 0;
+	boxesClicked = 0;
+	boxCounter = 0;
   	for(y = 0; y < 25; y++) 
   	{
   		boxAttribute[boxid] = Math.floor(Math.random() * 2);
@@ -34,7 +36,7 @@ function generateGame()
 
 function timer()
 {
-	var timeLeft = 5;
+	var timeLeft = 10;
     var elem = document.getElementById('time');
     var timerId = setInterval(countdown, 1000);
     function countdown() {
@@ -95,6 +97,7 @@ function showScore()
 //Info when the game is done
 function gameOver()
 {
+	showScore();
 	document.getElementById("game").innerHTML = "";
 	document.getElementById('game').innerHTML = ("<h4 class='alert-heading'>Well done!</h4> <p>Aww yeah, you successfully made it!</p> <hr> <p class='mb-0'>SCORE:</p>" + score + "<hr> <button type='button' class='btn btn-success' onclick='reloadGame()'><p class='mb-0'>play again? ⟲</p></button>");
 	//document.getElementById('game').setAttribute("class", "gameOverBox alert alert-success");
