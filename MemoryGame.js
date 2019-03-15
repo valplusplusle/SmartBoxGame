@@ -8,6 +8,7 @@ var waitForTimer = 0;
 //function to initialize the game page
 $(document).ready(function()
 {
+
 	boxid = 0
   	for(y = 0; y < 25; y++) 
   	{

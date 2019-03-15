@@ -3,7 +3,7 @@
 width:10vw;
 height:10vw;
 float: left;
-background-color: #000000;
+background-color: #138496;
 border:2px solid #000;
 outline: 1px dashed #fff;
 outline-offset: -10px;
@@ -11,9 +11,11 @@ line-height: 10vw;
 text-align: center;
 color: white;
 }
+
 .boxclicked
 {
-background-color: #138496;	
+background-color: #218838;	
+background-size: cover;
 }
 .boxclickedwrong
 {
@@ -23,10 +25,12 @@ background-color: #c82333;
 .status0
 {
 background-color: #000000;	
+
 }
 .status1
 {
 background-color: #218838;	
+background-size: cover;
 }
 
 .gameOverBox
@@ -46,15 +50,16 @@ height:50vw;
 @media only screen and (max-width:599px) {
 .gamefield
 {
-width:80vw;
-height:80vw;
+width:90vw;
+height:90vw;
 }
 .box
 {
-width:16vw;
-height:16vw;	
+width:18vw;
+height:18vw;	
 }
 }
+
 
 @keyframes fadein {
     from { opacity: 0; }
